@@ -142,6 +142,8 @@ ul { list-style: none; }
   justify-content: space-between;
 }
 
+.nav__logo-img { height: 80px; width: auto; display: block; }
+
 .nav__logo {
   font-family: var(--serif);
   font-size: 1.25rem;
@@ -250,7 +252,7 @@ ul { list-style: none; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  color: var(--accent);
+  color: #fff;
   margin-bottom: 20px;
 }
 
@@ -641,19 +643,30 @@ ul { list-style: none; }
 }
 
 /* ============================================================
+   IMAGENS COMPLEMENTARES (banners full-width)
+   ============================================================ */
+.img-banner { width: 100%; line-height: 0; }
+.img-banner__img { width: 100%; height: auto; display: block; }
+
+/* ============================================================
    EDUCAÇÃO ALIMENTAR
    ============================================================ */
-.edu { padding: 108px 0; background: var(--bg-alt); }
+.edu { background: var(--bg-alt); }
 
 .edu__inner {
   display: grid;
   grid-template-columns: 42% 1fr;
-  gap: 80px;
   align-items: center;
 }
 
-.edu__img-wrap { border-radius: 16px; overflow: hidden; }
-.edu__img { width: 100%; height: auto; display: block; }
+.img-banner + .cta-final { margin-top: 48px; }
+
+.edu__img-wrap { align-self: center; }
+.edu__img { width: 100%; height: auto; display: block; object-fit: unset; }
+
+.edu__text {
+  padding: 108px 80px;
+}
 
 .mitos { display: flex; flex-direction: column; gap: 16px; margin-top: 28px; }
 
@@ -872,8 +885,11 @@ ul { list-style: none; }
   .hero { align-items: flex-end; }
   .hero__content { padding-bottom: 56px; max-width: 100%; }
 
-  .sobre__inner, .edu__inner { grid-template-columns: 1fr; gap: 36px; }
-  .sobre__img, .edu__img { height: auto; }
+  .sobre__inner { grid-template-columns: 1fr; gap: 36px; }
+  .sobre__img { height: auto; }
+  .edu__inner { grid-template-columns: 1fr; }
+  .edu__img { height: auto; }
+  .edu__text { padding: 48px 28px; }
 
   .numeros__inner { gap: 40px; }
 
@@ -901,7 +917,7 @@ ul { list-style: none; }
   .servicos { padding: 56px 0; }
   .resultados { padding: 56px 0; }
   .depoimento { padding: 56px 0; }
-  .edu { padding: 56px 0; }
+  .edu__text { padding: 40px 18px; }
   .faq { padding: 56px 0; }
   .cta-final { padding: 72px 0; }
   .pq-grid { grid-template-columns: 1fr; }
