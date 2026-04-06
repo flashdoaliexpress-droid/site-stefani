@@ -224,6 +224,8 @@ ul { list-style: none; }
   padding-top: var(--nav-h);
 }
 
+.hero__img--desktop { display: none; }
+
 .hero__img {
   position: absolute;
   top: 0; right: 0;
@@ -921,4 +923,79 @@ ul { list-style: none; }
   .faq { padding: 56px 0; }
   .cta-final { padding: 72px 0; }
   .pq-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   DESKTOP — ajustes de layout
+   ============================================================ */
+@media (min-width: 769px) {
+
+  /* HERO — imagem mobile oculta, imagem desktop sem corte */
+  .hero__img--mobile  { display: none; }
+  .hero__img--desktop {
+    display: block;
+    position: absolute;
+    top: 0; right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+  }
+
+  /* Sem fundo escuro no desktop */
+  .hero {
+    background: transparent;
+  }
+  /* Leve sombra sobre a imagem para contraste dos elementos */
+  .hero__overlay {
+    display: block;
+    background: rgba(0, 0, 0, 0.28);
+  }
+
+  /* Elementos um pouco à direita */
+  .hero .container {
+    max-width: none;
+    margin-left: 0;
+    padding-left: 100px;
+    padding-right: 0;
+  }
+
+  /* Texto menor, colado à esquerda, com sombra para legibilidade sobre a imagem */
+  .hero__content {
+    max-width: 400px;
+    padding: 60px 0;
+  }
+  .hero__title {
+    font-size: clamp(1.8rem, 2.8vw, 3rem);
+    margin-bottom: 16px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  }
+  .hero__subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 28px;
+    max-width: 340px;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+  }
+  .hero__eyebrow {
+    font-size: 0.6rem;
+    margin-bottom: 14px;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+  }
+
+  /* IMAGENS COMPLEMENTARES — mesmo tamanho da imagem Educação Alimentar (42% da largura) */
+  .img-banner--edu {
+    width: 42%;
+  }
+
+  /* Complementar 1 → alinhada à direita */
+  .img-banner--right {
+    margin-left: auto;
+    margin-right: 28px;
+  }
+
+  /* Imagem acima do CTA → alinhada à esquerda */
+  .img-banner--left {
+    margin-left: 28px;
+    margin-right: auto;
+  }
 }
